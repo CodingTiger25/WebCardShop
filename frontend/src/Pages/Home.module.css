@@ -1,0 +1,12 @@
+.parent{
+    width: 6px;
+    height: 8px;
+    text-align: center;
+    display: flex;
+}
+
+.button{
+    width: 10px;
+    height: 15px;
+    alignment: bottom;
+}
