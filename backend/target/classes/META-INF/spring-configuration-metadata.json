@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "rsa",
+      "type": "com.cardshop.CardShop.config.RsaKeyProperties",
+      "sourceType": "com.cardshop.CardShop.config.RsaKeyProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rsa.private-key",
+      "type": "java.security.interfaces.RSAPrivateKey",
+      "sourceType": "com.cardshop.CardShop.config.RsaKeyProperties"
+    },
+    {
+      "name": "rsa.public-key",
+      "type": "java.security.interfaces.RSAPublicKey",
+      "sourceType": "com.cardshop.CardShop.config.RsaKeyProperties"
+    }
+  ],
+  "hints": []
+}
