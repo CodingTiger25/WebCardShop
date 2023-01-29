@@ -84,7 +84,7 @@ useEffect(() => {
                 <h2><MagicName to={`/cardview/${d.id}`}>{d.name} </MagicName></h2>
                 <div>
 
-                    <MagicSize src ={`../images/${d.image}`}/>
+                    <MagicSize src ={`/images/${d.image}`}/>
 
                 </div>
                 <PriceCondition>Price: ${d.price}.00</PriceCondition>

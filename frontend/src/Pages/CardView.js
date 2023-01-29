@@ -113,13 +113,6 @@ function CardView(){
             }
         )
 
-       /* axios.get('http://localhost:8080/main', {headers: {
-                "Authorization": `Bearer ${token}`
-            }}).then(res => {
-            setUserName( res.data);
-            console.log(res.data);
-        });*/
-
         axios.get(`http://localhost:8080/cartamount`, {
             params: {
                 name: userName
