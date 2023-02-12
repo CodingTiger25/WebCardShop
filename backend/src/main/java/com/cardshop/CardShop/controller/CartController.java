@@ -55,6 +55,13 @@ public class CartController{
     }
 
     @CrossOrigin(origins = "http://localhost:8080/")
+    @DeleteMapping("/cart/{id}")
+    public void deleteItem(@PathVariable Integer id)
+    {
+            cartItemRepository.deleteById(id);
+    }
+
+    @CrossOrigin(origins = "http://localhost:8080/")
     @Transactional
     @PutMapping("/cartamounts")
     public void amountToCart(@RequestBody CartQ cartQ)

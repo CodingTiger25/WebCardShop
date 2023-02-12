@@ -29,9 +29,6 @@ public class CartService {
         logger.info("Quantity: {}", cartItem.getQuantity());
 
         cartItemRepository.save(cartItem);
-
-
-
     }
 
 

@@ -1,7 +1,7 @@
 import {Form, Link} from "react-router-dom";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import axios from "axios";
+import axios, {Axios} from "axios";
 import styled, {css} from "styled-components";
 
 
@@ -32,6 +32,16 @@ function Cart(){
     const [list, setList]= useState([]);
     const [user, setUser] = useState(() => sessionStorage.getItem('userName'));
 
+
+    function deleteItem (itemId) {
+        axios.delete(`http://localhost:8080/cart/${itemId}`)
+            .then(
+                res => {
+                    console.log("deleted");
+                }
+            )
+    }
+
     useEffect( () => {
         axios.get(`http://localhost:3000/cart`, {
             params: {
@@ -56,7 +66,7 @@ function Cart(){
                 <MagicName>{d.name}</MagicName>
                 <MagicSize src={`../images/${d.image}`}/>
                 <p>AMOUNT: {d.quantity}</p>
-                <DeleteButton>REMOVE</DeleteButton>
+                <DeleteButton onClick={() => deleteItem(d.id)}>REMOVE</DeleteButton>
             </div>
         ))
     }
