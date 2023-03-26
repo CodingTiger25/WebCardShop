@@ -32,4 +32,6 @@ public class CartItem {
     private Integer quantity;
 
     private String image;
+
+    private Integer price;
 }

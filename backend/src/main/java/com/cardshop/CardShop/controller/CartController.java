@@ -43,7 +43,8 @@ public class CartController{
         logger.info("Cust name from cont: {}", cartList.cust_name());
         logger.info("Quantity from cont: {}", cartList.quantity());*/
 
-        cartService.addToCart(cartList.card_id(),cartList.cust_name(),cartList.quantity(), cartList.name(), cartList.image());
+        cartService.addToCart(cartList.card_id(),cartList.cust_name(),
+                cartList.quantity(), cartList.name(), cartList.image(),cartList.price());
 
         }
 

@@ -14,7 +14,8 @@ public class CartService {
     @Autowired
     CartItemRepository cartItemRepository;
 
-    public void addToCart(Integer cID, String cName, Integer Quantity, String cardName, String cardImage){
+    public void addToCart(Integer cID, String cName, Integer Quantity,
+                          String cardName, String cardImage,Integer price ){
 
         CartItem cartItem = new CartItem();
         var test = cartItem.getCard_id();
@@ -23,10 +24,13 @@ public class CartService {
         cartItem.setQuantity(Quantity);
         cartItem.setName(cardName);
         cartItem.setImage(cardImage);
+        cartItem.setPrice(price);
 
         logger.info("Card id: {}", cartItem.getCard_id());
         logger.info("Cust name: {}", cartItem.getCust_name());
         logger.info("Quantity: {}", cartItem.getQuantity());
+        logger.info("Price: {}", cartItem.getPrice());
+
 
         cartItemRepository.save(cartItem);
     }

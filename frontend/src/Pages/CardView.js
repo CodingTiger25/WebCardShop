@@ -154,8 +154,9 @@ function CardView(){
              let name = card.name;
              let image = card.image;
              let items = quantity;
+             let price = card.price;
 
-             let field = JSON.stringify({card_id, cust_name, quantity, name, image})
+             let field = JSON.stringify({card_id, cust_name, quantity, name, image,price})
              let cart_field = JSON.stringify({items,cust_name})
 
              await axios({
@@ -170,7 +171,8 @@ function CardView(){
                      withCredentials: true
                  }
 
-             }).then(console.log(`id: ${id}, name: ${userName}, amount: ${quantity}, and card name: ${card.name}`))
+             }).then(console.log(`id: ${id}, name: ${userName}, 
+             amount: ${quantity}, and card name: ${card.name}, with price: ${price}`))
 
              await axios({
                  method:"PUT",

@@ -30,13 +30,18 @@ const DeleteButton = styled.button`
 function Cart(){
 
     const [list, setList]= useState([]);
+    const [total, setTotal] = useState(0);
     const [user, setUser] = useState(() => sessionStorage.getItem('userName'));
+
+    let grand = 0;
 
 
     function deleteItem (itemId) {
         axios.delete(`http://localhost:8080/cart/${itemId}`)
             .then(
                 res => {
+                    alert("Deleted");
+                    window.location.reload();
                     console.log("deleted");
                 }
             )
@@ -66,6 +71,8 @@ function Cart(){
                 <MagicName>{d.name}</MagicName>
                 <MagicSize src={`../images/${d.image}`}/>
                 <p>AMOUNT: {d.quantity}</p>
+                <p>Price: ${d.price}.00</p>
+                <script>{grand += (d.quantity * d.price)}</script>
                 <DeleteButton onClick={() => deleteItem(d.id)}>REMOVE</DeleteButton>
             </div>
         ))
@@ -78,6 +85,8 @@ function Cart(){
             <Link to={'/main'}>Return to Main</Link>
             <h1>This is the cart page!!!</h1>
             {displayCart(list)}
+
+            <p>Grand total: ${grand}.00</p>
 
 
 
