@@ -46,6 +46,11 @@ const PriceCondition = styled.p`
 function Magic(){
 
 const [cardList, setCardList] = useState([]);
+const [cartQuantity, setCartQuantity] = useState(0);
+
+    const [list, setList]= useState([]);
+    const [total, setTotal] = useState(0);
+    const [user, setUser] = useState(() => sessionStorage.getItem('userName'));
 
     let userName;
     let token = sessionStorage.getItem('Bearer');
@@ -57,6 +62,18 @@ useEffect(() => {
         setCardList(items);
         console.log(items);
     })
+
+    axios.get(`http://localhost:3000/cart`, {
+        params: {
+            name: user
+        }
+    }).then(
+        res => {
+            const result = res.data;
+            setList(result);
+            console.log(result);
+        }
+    )
 
     axios.get('http://localhost:8080/main', {headers: {
             "Authorization": `Bearer ${token}`
@@ -74,6 +91,19 @@ useEffect(() => {
         signin = true;
     }
 
+
+    function addTotal(listAmount)
+    {
+        let cards = Array.from(listAmount);
+        let amount = 0;
+       for(let q in cards){
+
+           amount+= cards[q]["quantity"];
+
+    }
+    return amount;
+
+    }
 
     function displayCards(List)
     {
@@ -104,7 +134,7 @@ useEffect(() => {
             <div>
                 <h2>Cart</h2>
                 {!signin && <p> Items ()</p>}
-                {signin && <p>Items: ()</p>}
+                {signin && <p>Items: {addTotal(list)}</p>}
             </div>
 
             <div>

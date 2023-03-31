@@ -78,6 +78,7 @@ public class CartController{
     {
         Integer cartItems = cartRepository.findByEmail(name);
         logger.info("From Cart Get controller {}", name);
+        logger.info("From Cart # controller {}", cartItems);
         return cartItems;
     }
 

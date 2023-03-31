@@ -93,6 +93,7 @@ public class SecurityConfig {
                 .cors().disable()
                 .csrf().disable()
                 .authorizeHttpRequests((auth) -> auth
+                        .requestMatchers(HttpMethod.POST, "/main").permitAll()
                         .requestMatchers(HttpMethod.GET,"/magic").permitAll()
                         .requestMatchers(HttpMethod.GET,"/images/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/token").permitAll()
