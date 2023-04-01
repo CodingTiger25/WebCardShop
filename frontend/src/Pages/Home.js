@@ -34,9 +34,9 @@ function Home(){
         <div>
             <Wrapper1>
                <Title>
-                    <h1>
+
                         This is the home of the card shop
-                    </h1>
+
                 </Title>
             </Wrapper1>
 

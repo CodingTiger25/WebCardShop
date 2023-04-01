@@ -109,7 +109,7 @@ function CardView(){
             res => {
                 const result = res.data;
                 SetCard(result);
-                console.log(result);
+                //console.log(result);
             }
         )
 
@@ -121,7 +121,7 @@ function CardView(){
             res => {
                 const result = res.data;
                 setCartAmount(result);
-                console.log(result);
+                //console.log(result);
             }
         )
     },[])
@@ -129,7 +129,7 @@ function CardView(){
 
 
 
-    console.log(`Amount of cards in cart is: ${cartAmount}`)
+    //console.log(`Amount of cards in cart is: ${cartAmount}`)
      const subtract = () => {
             setQuantity(Math.max(quantity - 1, 0));
      }
@@ -186,12 +186,12 @@ function CardView(){
                      withCredentials: true
                  }
              })
-             console.log(cart_field);
+             //console.log(cart_field);
              alert(`${card.name} has been added to cart`)
          }
      }
 
-    console.log(card);
+    //console.log(card);
     return(
         <div>
             <NavBar>
