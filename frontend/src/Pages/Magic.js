@@ -56,6 +56,8 @@ const [cartQuantity, setCartQuantity] = useState(0);
     let token = sessionStorage.getItem('Bearer');
 
 const url = 'http://localhost:8080/magic';
+
+//Retrieves the list of cards in the database and, if any the users list of cards in their cart.
 useEffect(() => {
     axios.get(url).then(res => {
         const items = res.data;
@@ -83,6 +85,7 @@ useEffect(() => {
 
 }, [])
 
+    //Signin check for a current user
     let signin = false;
     if(userName === null){
         signin = false;
@@ -92,6 +95,7 @@ useEffect(() => {
     }
 
 
+    //Displays item quantity in a users cart
     function addTotal(listAmount)
     {
         let cards = Array.from(listAmount);
@@ -105,6 +109,7 @@ useEffect(() => {
 
     }
 
+    //Displays the cards in this category of the store
     function displayCards(List)
     {
         let cards = Array.from(List);

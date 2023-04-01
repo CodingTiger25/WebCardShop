@@ -38,6 +38,7 @@ function Login(){
         window.location.replace('http://localhost:3000/');
     }
 
+    //Styled Components
     const MainPage = styled(Link)`
     text-decoration: underline;
       color: black;
@@ -95,7 +96,7 @@ function Login(){
                     </label>
                 <div>
                     <label>Password:
-                        <input type={"text"} onChange={(e) => setThePassword(e.target.value)}/>
+                        <input type={"password"} onChange={(e) => setThePassword(e.target.value)}/>
                     </label>
 
                 </div>
