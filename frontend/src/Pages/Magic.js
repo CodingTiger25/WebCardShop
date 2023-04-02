@@ -14,6 +14,16 @@ const Title = styled.h1`
     color: coral;
 `;
 
+const Background = styled.body`
+
+    background-size: 100%;
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+
+`;
 
 const MagicCard = styled.section`
     display: inline-grid;
@@ -131,21 +141,25 @@ useEffect(() => {
 
 
     return(
-        <div>
-            <Title>Magic: The Gathering</Title>
+        <Background>
             <div>
-                {displayCards(cardList)}
-            </div>
-            <div>
-                <h2>Cart</h2>
-                {!signin && <p> Items ()</p>}
-                {signin && <p>Items: {addTotal(list)}</p>}
-            </div>
+                <div>
+                    <Link to={'/main'}>Back to Main Page</Link>
+                </div>
+                <Title>Magic: The Gathering</Title>
 
-            <div>
-                <Link to={'/main'}>Back to Main Page</Link>
+                <div>
+                    {displayCards(cardList)}
+                </div>
+                <div>
+                    <h2>Cart</h2>
+                    {!signin && <p> Items ()</p>}
+                    {signin && <p>Items: {addTotal(list)}</p>}
+                </div>
+
+
             </div>
-        </div>
+        </Background>
     )
 
 }
