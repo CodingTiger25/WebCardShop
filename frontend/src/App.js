@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Magic from "./Pages/Magic";
+import Yugioh from "./Pages/Yugioh";
 import CardView from "./Pages/CardView";
 import Cart from "./Pages/Cart";
 
@@ -21,6 +22,8 @@ function App() {
                 <Route path={'/register'} element={<Register></Register>}></Route>
                 <Route path={'/token'} element={<Login></Login>}></Route>
                 <Route path={'/magic'} element={<Magic></Magic>}></Route>
+                <Route path={'/yugioh'} element={<Yugioh></Yugioh>}></Route>
+
                 <Route path={'/cardview/:id'} element={<CardView></CardView>}></Route>
                 <Route path={"/cart"} element={<Cart></Cart>}></Route>
             </Routes>

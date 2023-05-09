@@ -96,6 +96,7 @@ function Main(){
                     <div>
                         <MainBackground>
                             <CardLink to={'/magic'}>Magic: The Gathering</CardLink>
+                            <CardLink to={'/yugioh'}>Yu-Gi-Oh</CardLink>
                         </MainBackground>
                     </div>
 
