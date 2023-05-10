@@ -51,7 +51,7 @@ function Yugioh()
         return cards.map((d) => (
             <MagicCard>
                 <div key={d._id}>
-                    <h2><MagicName to={`/cardview/${d.id}`}>{d.name} </MagicName></h2>
+                    <h2><MagicName to={`/yugiohview/${d.id}`}>{d.name} </MagicName></h2>
                     <div>
 
                         <MagicSize src ={`/images/${d.image}`}/>

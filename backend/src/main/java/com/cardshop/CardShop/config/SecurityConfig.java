@@ -95,14 +95,16 @@ public class SecurityConfig {
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers(HttpMethod.POST, "/main").permitAll()
                         .requestMatchers(HttpMethod.GET,"/magic").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/yugioh").permitAll()
-                                .requestMatchers(HttpMethod.GET,"/yugioh").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/yugioh").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/yugioh").permitAll()
                         .requestMatchers(HttpMethod.GET,"/images/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/token").permitAll()
                         .requestMatchers(HttpMethod.POST, "/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/addrole").permitAll()
                         .requestMatchers(HttpMethod.POST, "/main").permitAll()
                         .requestMatchers(HttpMethod.GET, "/cardview/{card_id}").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/yugiohview/{card_id}").permitAll()
+
                         .requestMatchers(HttpMethod.DELETE, "/cart/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/cart").permitAll()
                         .requestMatchers(HttpMethod.GET, "/cart").permitAll()

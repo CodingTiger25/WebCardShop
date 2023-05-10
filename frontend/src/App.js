@@ -9,6 +9,7 @@ import Login from "./Pages/Login";
 import Magic from "./Pages/Magic";
 import Yugioh from "./Pages/Yugioh";
 import CardView from "./Pages/CardView";
+import YugiohView from "./Pages/YugiohView";
 import Cart from "./Pages/Cart";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 <Route path={'/yugioh'} element={<Yugioh></Yugioh>}></Route>
 
                 <Route path={'/cardview/:id'} element={<CardView></CardView>}></Route>
+                <Route path={'/yugiohview/:id'} element={<YugiohView></YugiohView>}></Route>
                 <Route path={"/cart"} element={<Cart></Cart>}></Route>
             </Routes>
         </Router>
