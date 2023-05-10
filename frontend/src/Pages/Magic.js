@@ -65,7 +65,7 @@ const [cartQuantity, setCartQuantity] = useState(0);
     let userName;
     let token = sessionStorage.getItem('Bearer');
 
-const url = 'http://localhost:8080/magic';
+    const url = 'http://localhost:8080/magic';
 
 //Retrieves the list of cards in the database and, if any the users list of cards in their cart.
 useEffect(() => {

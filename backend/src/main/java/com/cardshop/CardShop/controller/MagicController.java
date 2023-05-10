@@ -14,7 +14,8 @@ public class MagicController {
     @Autowired
     private final MagicCardRepository magicCardRepository;
 
-    public MagicController(MagicCardRepository magicCardRepository) {
+    public MagicController(MagicCardRepository magicCardRepository)
+    {
         this.magicCardRepository = magicCardRepository;
     }
 
