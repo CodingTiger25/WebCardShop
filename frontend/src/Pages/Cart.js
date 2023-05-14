@@ -1,8 +1,11 @@
-import {Form, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import axios, {Axios} from "axios";
-import styled, {css} from "styled-components";
+import axios from "axios";
+import styled from "styled-components";
+import {CartPage, CartList, Amount, Cost,
+    CardName,RemoveButton, Line, GrandTotal, Total
+} from "../Styles/Cart.styled";
 
 
 const MagicCard = styled.section`
@@ -68,30 +71,43 @@ function Cart(){
         let items = Array.from(Items);
         return items.map((d) => (
             <div key ={d._id}>
-                <MagicName>{d.name}</MagicName>
+
                 <MagicSize src={`../images/${d.image}`}/>
-                <p>AMOUNT: {d.quantity}</p>
-                <p>Price: ${d.price}.00</p>
+                <CardName><MagicName>{d.name}</MagicName></CardName>
+
+                <Amount><p>AMOUNT: {d.quantity}</p></Amount>
+                <Cost><p>Price: ${d.price}.00</p></Cost>
                 <script>{grand += (d.quantity * d.price)}</script>
-                <DeleteButton onClick={() => deleteItem(d.id)}>REMOVE</DeleteButton>
+                <RemoveButton><DeleteButton onClick={() => deleteItem(d.id)}>
+                    REMOVE</DeleteButton></RemoveButton>
+                <Line></Line>
             </div>
         ))
     }
 
     return(
 
-        <div>
+        <CartPage>
 
             <Link to={'/main'}>Return to Main</Link>
-            <h1>This is the cart page!!!</h1>
-            {displayCart(list)}
+            <h1>Shopping Cart</h1>
 
-            <p>Grand total: ${grand}.00</p>
+            <CartList>
+                {displayCart(list)}
+            </CartList>
 
 
 
 
-        </div>
+
+
+            <GrandTotal>
+                <p>Grand total: </p>
+                <Total>${grand}.00</Total>
+            </GrandTotal>
+
+
+        </CartPage>
     )
 }
 
