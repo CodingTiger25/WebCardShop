@@ -92,14 +92,14 @@ function Main(){
                         <CartLink to={'/cart'}>Cart</CartLink>
                     </NavBackground>
 
-
-                    <div>
-                        <MainBackground>
-                            <CardLink to={'/magic'}>Magic: The Gathering</CardLink>
-                            <CardLink to={'/yugioh'}>Yu-Gi-Oh</CardLink>
-                        </MainBackground>
-                    </div>
-
+                    <body>
+                        <div>
+                            <MainBackground>
+                                <CardLink to={'/magic'}>Magic: The Gathering</CardLink>
+                                <CardLink to={'/yugioh'}>Yu-Gi-Oh</CardLink>
+                            </MainBackground>
+                        </div>
+                    </body>
                 </nav>
     )
 }

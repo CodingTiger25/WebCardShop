@@ -35,7 +35,7 @@ function Home(){
             <Wrapper1>
                <Title>
 
-                        This is the home of the card shop
+                        Trading Card Shop
 
                 </Title>
             </Wrapper1>
@@ -43,7 +43,7 @@ function Home(){
 
             <Wrapper2>
 
-                    <MainLink to ={'/main'}>Enter the card site</MainLink>
+                    <MainLink to ={'/main'}>Browse card selection</MainLink>
 
             </Wrapper2>
 

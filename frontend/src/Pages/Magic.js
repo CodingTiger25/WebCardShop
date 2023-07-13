@@ -2,57 +2,7 @@ import * as React from "react";
 import {Form, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import styled, {css} from "styled-components";
-
-
-//Style components
-const Title = styled.h1`
-  
-    text-align: center;
-    font-size: 3rem;
-    text-decoration: underline;
-    color: coral;
-`;
-
-const Background = styled.body`
-
-    background-size: 100%;
-    background-color: burlywood;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    
-
-`;
-
-const MagicCard = styled.section`
-    display: inline-grid;
-    padding: .4rem;
-    margin: 1rem;
-    border: 4px solid black;
-`;
-const MagicSize = styled.img`
-    height: 26rem;
-    width:  23rem;
-`;
-const MagicName = styled(Link)`
-    text-decoration: none;
-    color: black;
-    font-size: 2rem;
-`;
-
-const PriceCondition = styled.p`
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-    width: 150px;
-    padding: 1rem;
-    margin: 1rem;
-    display: inline-block;
-`;
-// End of styled components
-
+import {MagicCard, MagicName, MagicSize, PriceCondition, Title, Background, Content} from "../Styles/Magic.styled"
 function Magic(){
 
 const [cardList, setCardList] = useState([]);
@@ -142,21 +92,34 @@ useEffect(() => {
 
     return(
         <Background>
+
+            <head>
+
+
+                <title>
+                    Magic: the gathering
+                </title>
+            </head>
             <div>
                 <div>
                     <Link to={'/main'}>Back to Main Page</Link>
                 </div>
-                <Title>Magic: The Gathering</Title>
 
-                <div>
-                    {displayCards(cardList)}
-                </div>
-                <div>
-                    <h2>Cart</h2>
-                    {!signin && <p> Items ()</p>}
-                    {signin && <p>Items: {addTotal(list)}</p>}
-                </div>
 
+                <Content>
+
+
+                    <Title>Magic: The Gathering</Title>
+                        <div>
+                            {displayCards(cardList)}
+                        </div>
+
+                    <div>
+                        <h2>Cart</h2>
+                        {!signin && <p> Items ()</p>}
+                        {signin && <p>Items: {addTotal(list)}</p>}
+                    </div>
+                </Content>
 
             </div>
         </Background>
